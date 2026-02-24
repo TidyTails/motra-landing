@@ -182,10 +182,12 @@ We deploy a gig-powered network of mobile technicians to clean and service robot
 
 ## Built to win this market.
 
-**TJ Halpin — Founder & CEO**
-- Operator mindset: Built Tidy Tails (pet waste removal) from 0 to recurring revenue
-- Understands gig economics, fleet operations, and service quality at scale
-- Based in St. Louis; will relocate to target market for launch
+**Adonis Williams — Founder & CEO**
+- Deputy Functional Chief Engineer at Boeing
+- Engineering Manager, Boeing Research & Technology
+- Deep expertise in complex systems, fleet operations, and scaling infrastructure
+- Education: Missouri University of Science and Technology
+- Based in Seattle, WA — epicenter of tech and mobility innovation
 
 **[Advisor slots open for:]**
 - AV industry veteran (Waymo, Cruise, or similar)
@@ -242,12 +244,11 @@ We deploy a gig-powered network of mobile technicians to clean and service robot
 
 # Contact
 
-**TJ Halpin**
+**Adonis Williams**
 Founder, MOTRA
 
-📧 [email TBD]
-🌐 tidytails.github.io/motra-landing
-📍 St. Louis, MO (relocating to launch market)
+tidytails.github.io/motra-landing
+Seattle, Washington
 
 ---
 
