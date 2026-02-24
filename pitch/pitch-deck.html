@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTRA Pitch Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #222;
+            position: relative;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 0.2em;
+        }
+
+        /* Title Slide */
+        .title-slide {
+            background: linear-gradient(135deg, #000 0%, #0a1628 50%, #000 100%);
+            text-align: center;
+            align-items: center;
+        }
+
+        .title-slide .logo {
+            width: 150px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 50px rgba(0, 102, 255, 0.5));
+        }
+
+        .title-slide h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            background: linear-gradient(135deg, #fff 0%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-slide .tagline {
+            font-size: 1.5rem;
+            color: #666;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        /* Content Slides */
+        .slide-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #0066ff;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+
+        h2 strong {
+            color: #0066ff;
+        }
+
+        .content {
+            max-width: 1000px;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            background: linear-gradient(135deg, #0066ff15 0%, transparent 100%);
+            border-color: #0066ff30;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0066ff;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #222;
+        }
+
+        th {
+            color: #0066ff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        td {
+            color: #ccc;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        ul li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #0066ff;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #0066ff20 0%, #0066ff05 100%);
+            border: 1px solid #0066ff40;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-box p {
+            color: #fff;
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Problem icons */
+        .pain-point {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .pain-point:last-child {
+            border-bottom: none;
+        }
+
+        .pain-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Market size visualization */
+        .market-bar {
+            background: #111;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .market-bar-inner {
+            height: 40px;
+            background: linear-gradient(90deg, #0066ff 0%, #0044cc 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            font-weight: 600;
+        }
+
+        .market-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Competition matrix */
+        .competitor {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .competitor-name {
+            font-weight: 600;
+        }
+
+        .competitor-gap {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+        }
+
+        /* Final slide */
+        .final-slide {
+            text-align: center;
+            align-items: center;
+            background: linear-gradient(180deg, #0a1628 0%, #000 100%);
+        }
+
+        .final-slide h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+        }
+
+        .contact-info p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .slide { padding: 2rem; }
+            h2 { font-size: 2rem; }
+            .grid-2, .grid-3, .two-col { grid-template-columns: 1fr; }
+            .title-slide h1 { font-size: 3rem; }
+        }
+
+        @media print {
+            .slide { 
+                page-break-after: always; 
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title -->
+<section class="slide title-slide">
+    <img src="../assets/motra-logo.jpg" alt="MOTRA" class="logo">
+    <h1>MOTRA</h1>
+    <p class="tagline">Autonomy, Maintained</p>
+</section>
+
+<!-- SLIDE 1: Purpose -->
+<section class="slide">
+    <span class="slide-number">01 / COMPANY PURPOSE</span>
+    <div class="content">
+        <p class="slide-label">What We Do</p>
+        <h2>MOTRA is the <strong>infrastructure layer</strong> for autonomous vehicle fleet care.</h2>
+        <p>We deploy a gig-powered network of mobile technicians to clean and service robotaxis on-location, on-demand — keeping fleets running 24/7 without depot downtime.</p>
+        
+        <div class="highlight-box">
+            <p>Think <strong>AWS for autonomous fleet maintenance</strong> — invisible, essential, everywhere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 2: Problem -->
+<section class="slide">
+    <span class="slide-number">02 / THE PROBLEM</span>
+    <div class="content">
+        <p class="slide-label">Market Pain</p>
+        <h2>Autonomous vehicles run 24/7. Their maintenance infrastructure <strong>doesn't.</strong></h2>
+        
+        <div class="two-col">
+            <div>
+                <h3 style="color: #0066ff; margin-bottom: 1.5rem;">The Pain Points</h3>
+                <div class="pain-point">
+                    <span class="pain-icon">🚗</span>
+                    <div><strong>No driver = no eyes</strong><br><span style="color:#888">Nobody notices trash, spills, or wear between rides</span></div>
+                </div>
+                <div class="pain-point">
+                    <span class="pain-icon">📍</span>
+                    <div><strong>Depot-dependent</strong><br><span style="color:#888">Vehicles must return to facilities for basic cleaning</span></div>
+                </div>
+                <div class="pain-point">
+                    <span class="pain-icon">⏱️</span>
+                    <div><strong>Downtime = lost revenue</strong><br><span style="color:#888">Every minute in depot is a ride not taken</span></div>
+                </div>
+                <div class="pain-point">
+                    <span class="pain-icon">🔧</span>
+                    <div><strong>Sensors are safety-critical</strong><br><span style="color:#888">Dirty LiDAR/cameras = degraded driving</span></div>
+                </div>
+            </div>
+            <div class="card" style="background: #0a0a0a;">
+                <h3 style="color: #ff6b6b;">Current Reality</h3>
+                <p style="margin-top: 1rem;">Waymo <strong>hand-washes every vehicle</strong> at centralized depots.</p>
+                <p style="margin-top: 1rem; font-size: 1.5rem; color: #fff;">That doesn't scale to <strong>millions of rides.</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 3: Solution -->
+<section class="slide">
+    <span class="slide-number">03 / THE SOLUTION</span>
+    <div class="content">
+        <p class="slide-label">Our Answer</p>
+        <h2>Mobile fleet care, <strong>dispatched like an Uber.</strong></h2>
+        <p>MOTRA deploys certified technicians directly to vehicles — wherever they are.</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Quick Clean</h3>
+                <p>5-10 min between-ride wipe-down, trash removal, odor neutralization</p>
+            </div>
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>Deep Clean</h3>
+                <p>30-60 min full interior detail, sensor cleaning, exterior wash</p>
+            </div>
+            <div class="card">
+                <div class="icon">🔧</div>
+                <h3>Maintenance</h3>
+                <p>Light repairs, tire checks, fluid top-offs, emergency response</p>
+            </div>
+        </div>
+        
+        <div class="highlight-box" style="margin-top: 3rem;">
+            <p>✅ Vehicles stay in service zones &nbsp;&nbsp;|&nbsp;&nbsp; ✅ Variable cost model &nbsp;&nbsp;|&nbsp;&nbsp; ✅ Scales instantly &nbsp;&nbsp;|&nbsp;&nbsp; ✅ 24/7 availability</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 4: Why Now -->
+<section class="slide">
+    <span class="slide-number">04 / WHY NOW</span>
+    <div class="content">
+        <p class="slide-label">Market Timing</p>
+        <h2>The robotaxi industry is hitting an <strong>inflection point.</strong></h2>
+        
+        <table>
+            <tr>
+                <th>Trend</th>
+                <th>Data</th>
+            </tr>
+            <tr>
+                <td>Waymo Scale</td>
+                <td><strong>400K rides/week</strong> → targeting <strong>1M/week</strong> by end of 2026</td>
+            </tr>
+            <tr>
+                <td>Fleet Growth</td>
+                <td>2,500 vehicles today → <strong>"tens of thousands"</strong> planned</td>
+            </tr>
+            <tr>
+                <td>New Entrants</td>
+                <td>Tesla Robotaxi, Zoox, Cruise rebuild — all scaling 2026-2027</td>
+            </tr>
+            <tr>
+                <td>Gig Infrastructure</td>
+                <td>Uber/DoorDash proved the model — workforce is trained and ready</td>
+            </tr>
+        </table>
+        
+        <div class="highlight-box">
+            <p>🚨 <strong>The window is NOW</strong> — before AV companies build in-house or a competitor emerges.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 5: Market Size -->
+<section class="slide">
+    <span class="slide-number">05 / MARKET SIZE</span>
+    <div class="content">
+        <p class="slide-label">The Opportunity</p>
+        <h2><strong>$500M+</strong> market emerging, scaling to <strong>$5B+</strong></h2>
+        
+        <div class="grid-3" style="margin-bottom: 3rem;">
+            <div class="card stat-card">
+                <div class="stat-value">$547M</div>
+                <div class="stat-label">TAM 2028</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-value">$2.2B</div>
+                <div class="stat-label">TAM 2030</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-value">$5.5B</div>
+                <div class="stat-label">TAM 2032</div>
+            </div>
+        </div>
+        
+        <div class="market-bar">
+            <div class="market-bar-inner" style="width: 10%;">$2M</div>
+            <div class="market-bar-label">
+                <span>Year 1 SOM</span>
+                <span>10% of one operator, one city</span>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; color: #666;">Expansion vectors: Electric fleet services (Amazon, FedEx vans) • International AV markets • Adjacent services</p>
+    </div>
+</section>
+
+<!-- SLIDE 6: Competition -->
+<section class="slide">
+    <span class="slide-number">06 / COMPETITION</span>
+    <div class="content">
+        <p class="slide-label">Landscape</p>
+        <h2>Blue ocean with <strong>fragmented alternatives.</strong></h2>
+        
+        <div class="two-col">
+            <div>
+                <div class="competitor">
+                    <span class="competitor-name">AV In-House Ops</span>
+                    <span class="competitor-gap">❌ High fixed cost, doesn't scale</span>
+                </div>
+                <div class="competitor">
+                    <span class="competitor-name">Traditional Fleet Services</span>
+                    <span class="competitor-gap">❌ Not mobile, not AV-specialized</span>
+                </div>
+                <div class="competitor">
+                    <span class="competitor-name">Car Washes</span>
+                    <span class="competitor-gap">❌ Damages sensors, no interior</span>
+                </div>
+                <div class="competitor">
+                    <span class="competitor-name">Mobile Detailing</span>
+                    <span class="competitor-gap">❌ Not scaled, not fleet-focused</span>
+                </div>
+            </div>
+            <div class="card" style="background: linear-gradient(135deg, #0066ff15 0%, #000 100%); border-color: #0066ff40;">
+                <h3 style="color: #0066ff;">Our Advantages</h3>
+                <ul style="margin-top: 1rem;">
+                    <li>AV-Specialized (sensors, EVs, safety)</li>
+                    <li>Mobile-First (go to the vehicle)</li>
+                    <li>Gig-Powered (variable cost, instant scale)</li>
+                    <li>Tech-Enabled (API integration)</li>
+                    <li>First Mover (no scaled competitor)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 7: Product -->
+<section class="slide">
+    <span class="slide-number">07 / PRODUCT</span>
+    <div class="content">
+        <p class="slide-label">What We're Building</p>
+        <h2><strong>Platform</strong> + <strong>Network</strong> + <strong>Expertise</strong></h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>For Fleet Operators</h3>
+                <ul>
+                    <li>📊 Fleet Dashboard — real-time status, scheduling, quality metrics</li>
+                    <li>🔌 API Integration — connects to existing systems</li>
+                    <li>📈 Analytics — predictive maintenance, cost tracking</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>For MOTRA Techs</h3>
+                <ul>
+                    <li>📱 Mobile App — job dispatch, checklists, earnings</li>
+                    <li>🎓 Certification — AV-specific training program</li>
+                    <li>🧰 Equipment Kits — standardized tools</li>
+                </ul>
+            </div>
+        </div>
+        
+        <table style="margin-top: 2rem;">
+            <tr>
+                <th>Milestone</th>
+                <th>Timeline</th>
+            </tr>
+            <tr><td>MVP launch in one market</td><td>Q3 2026</td></tr>
+            <tr><td>API integrations with Waymo</td><td>Q4 2026</td></tr>
+            <tr><td>Expand to 3 markets</td><td>Q1 2027</td></tr>
+            <tr><td>iOS/Android apps</td><td>Q2 2027</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- SLIDE 8: Business Model -->
+<section class="slide">
+    <span class="slide-number">08 / BUSINESS MODEL</span>
+    <div class="content">
+        <p class="slide-label">How We Make Money</p>
+        <h2>Platform take-rate on <strong>every service.</strong></h2>
+        
+        <div class="grid-2">
+            <div>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr><td>Avg service price</td><td>$15</td></tr>
+                    <tr><td>Tech payout</td><td>$10-11</td></tr>
+                    <tr><td>Platform margin</td><td><strong>$4-5 (27-33%)</strong></td></tr>
+                    <tr><td>Services/tech/day</td><td>15-20</td></tr>
+                    <tr><td>Tech daily earnings</td><td>$150-220</td></tr>
+                </table>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-value">25-35%</div>
+                <div class="stat-label">Platform Margin</div>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">High operating leverage — platform costs don't scale linearly with services</p>
+            </div>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>At Scale:</strong> 10,000 services/day = $150K revenue, $40-50K margin</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 9: Team -->
+<section class="slide">
+    <span class="slide-number">09 / TEAM</span>
+    <div class="content">
+        <p class="slide-label">Who We Are</p>
+        <h2>Built to <strong>win this market.</strong></h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>TJ Halpin — Founder & CEO</h3>
+                <ul>
+                    <li>Operator mindset: Built Tidy Tails (pet waste removal) from 0 to recurring revenue</li>
+                    <li>Understands gig economics, fleet operations, and service quality at scale</li>
+                    <li>Will relocate to target market for launch</li>
+                </ul>
+            </div>
+            <div class="card" style="border-style: dashed;">
+                <h3 style="color: #666;">Advisor Slots Open</h3>
+                <ul style="color: #666;">
+                    <li>AV industry veteran (Waymo, Cruise)</li>
+                    <li>Gig economy operator (Uber alumni)</li>
+                    <li>Enterprise sales leader</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="highlight-box" style="margin-top: 2rem;">
+            <p><strong>Why We Win:</strong> Operator DNA • Startup Speed • 100% Focus on AV Fleet Care</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 10: The Ask -->
+<section class="slide">
+    <span class="slide-number">10 / FINANCIALS & THE ASK</span>
+    <div class="content">
+        <p class="slide-label">Investment</p>
+        <h2>Path to <strong>$10M ARR</strong> in 36 months.</h2>
+        
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Markets</th>
+                <th>Vehicles Served</th>
+                <th>Revenue</th>
+            </tr>
+            <tr><td>Year 1</td><td>1</td><td>500</td><td>$1.2M</td></tr>
+            <tr><td>Year 2</td><td>3</td><td>3,000</td><td>$5.5M</td></tr>
+            <tr><td>Year 3</td><td>7</td><td>10,000</td><td>$15M</td></tr>
+        </table>
+        
+        <div class="grid-2" style="margin-top: 3rem;">
+            <div class="card stat-card">
+                <div class="stat-value">$1.5M</div>
+                <div class="stat-label">Seed Round</div>
+            </div>
+            <div class="card">
+                <h3>Use of Funds</h3>
+                <ul>
+                    <li>Product (40%) — App, API integrations</li>
+                    <li>Operations (30%) — Techs, training, equipment</li>
+                    <li>Sales (20%) — Enterprise BD</li>
+                    <li>G&A (10%) — Legal, insurance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final Slide -->
+<section class="slide final-slide">
+    <img src="../assets/motra-logo.jpg" alt="MOTRA" style="width: 120px; margin-bottom: 2rem;">
+    <h2>The future of mobility needs <strong>infrastructure.</strong></h2>
+    <p style="font-size: 1.5rem; color: #666; letter-spacing: 0.2em;">AUTONOMY, MAINTAINED.</p>
+    
+    <div class="contact-info">
+        <p><strong>TJ Halpin</strong> — Founder</p>
+        <p style="margin-top: 0.5rem;">tidytails.github.io/motra-landing</p>
+    </div>
+</section>
+
+</body>
+</html>
