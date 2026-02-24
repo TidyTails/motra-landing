@@ -349,9 +349,41 @@
         }
 
         @media print {
+            @page {
+                size: 11in 8.5in; /* Landscape letter */
+                margin: 0;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
             .slide { 
-                page-break-after: always; 
-                min-height: 100vh;
+                page-break-after: always;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                min-height: 8in;
+                height: 8in;
+                max-height: 8in;
+                overflow: hidden;
+                padding: 2.5rem;
+            }
+            
+            .slide:last-child {
+                page-break-after: avoid;
+            }
+            
+            .grid-2, .grid-3, .two-col {
+                break-inside: avoid;
+            }
+            
+            table {
+                break-inside: avoid;
+            }
+            
+            .card {
+                break-inside: avoid;
             }
         }
     </style>
