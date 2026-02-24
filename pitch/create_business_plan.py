@@ -23,27 +23,29 @@ def add_title_slide(title, subtitle=""):
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     
     # Blue header bar
-    header = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, Inches(1.5))
+    header = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, Inches(1.2))
     header.fill.solid()
     header.fill.fore_color.rgb = DARK_BLUE
     header.line.fill.background()
     
     # Title
-    title_box = slide.shapes.add_textbox(Inches(0.5), Inches(0.4), Inches(9), Inches(0.8))
+    title_box = slide.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
     tf = title_box.text_frame
     p = tf.paragraphs[0]
     p.text = title
-    p.font.size = Pt(36)
+    p.font.size = Pt(44)
     p.font.bold = True
     p.font.color.rgb = WHITE
+    p.alignment = PP_ALIGN.CENTER
     
     # Subtitle
     if subtitle:
-        sub_box = slide.shapes.add_textbox(Inches(0.5), Inches(2.5), Inches(9), Inches(1))
+        sub_box = slide.shapes.add_textbox(Inches(0.5), Inches(2.0), Inches(9), Inches(2.5))
         tf = sub_box.text_frame
+        tf.word_wrap = True
         p = tf.paragraphs[0]
         p.text = subtitle
-        p.font.size = Pt(24)
+        p.font.size = Pt(18)
         p.font.color.rgb = DARK_GRAY
         p.alignment = PP_ALIGN.CENTER
     
@@ -53,32 +55,32 @@ def add_content_slide(title, content_items, slide_num=""):
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     
     # Blue header bar
-    header = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, Inches(0.8))
+    header = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, Inches(0.6))
     header.fill.solid()
     header.fill.fore_color.rgb = DARK_BLUE
     header.line.fill.background()
     
     # Slide number
     if slide_num:
-        num_box = slide.shapes.add_textbox(Inches(0.3), Inches(0.2), Inches(0.5), Inches(0.4))
+        num_box = slide.shapes.add_textbox(Inches(0.2), Inches(0.12), Inches(0.4), Inches(0.35))
         tf = num_box.text_frame
         p = tf.paragraphs[0]
         p.text = slide_num
-        p.font.size = Pt(18)
+        p.font.size = Pt(14)
         p.font.bold = True
         p.font.color.rgb = WHITE
     
     # Title
-    title_box = slide.shapes.add_textbox(Inches(0.8), Inches(0.2), Inches(8.5), Inches(0.5))
+    title_box = slide.shapes.add_textbox(Inches(0.6), Inches(0.12), Inches(8.5), Inches(0.4))
     tf = title_box.text_frame
     p = tf.paragraphs[0]
     p.text = title
-    p.font.size = Pt(24)
+    p.font.size = Pt(20)
     p.font.bold = True
     p.font.color.rgb = WHITE
     
     # Content
-    content_box = slide.shapes.add_textbox(Inches(0.5), Inches(1.1), Inches(9), Inches(4))
+    content_box = slide.shapes.add_textbox(Inches(0.4), Inches(0.75), Inches(9.2), Inches(4.7))
     tf = content_box.text_frame
     tf.word_wrap = True
     
@@ -88,9 +90,9 @@ def add_content_slide(title, content_items, slide_num=""):
         else:
             p = tf.add_paragraph()
         p.text = item
-        p.font.size = Pt(14)
+        p.font.size = Pt(11)
         p.font.color.rgb = DARK_GRAY
-        p.space_after = Pt(8)
+        p.space_after = Pt(4)
     
     return slide
 
@@ -98,37 +100,37 @@ def add_two_column_slide(title, left_title, left_items, right_title, right_items
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     
     # Blue header bar
-    header = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, Inches(0.8))
+    header = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, Inches(0.6))
     header.fill.solid()
     header.fill.fore_color.rgb = DARK_BLUE
     header.line.fill.background()
     
     # Slide number
     if slide_num:
-        num_box = slide.shapes.add_textbox(Inches(0.3), Inches(0.2), Inches(0.5), Inches(0.4))
+        num_box = slide.shapes.add_textbox(Inches(0.2), Inches(0.12), Inches(0.4), Inches(0.35))
         p = num_box.text_frame.paragraphs[0]
         p.text = slide_num
-        p.font.size = Pt(18)
+        p.font.size = Pt(14)
         p.font.bold = True
         p.font.color.rgb = WHITE
     
     # Title
-    title_box = slide.shapes.add_textbox(Inches(0.8), Inches(0.2), Inches(8.5), Inches(0.5))
+    title_box = slide.shapes.add_textbox(Inches(0.6), Inches(0.12), Inches(8.5), Inches(0.4))
     p = title_box.text_frame.paragraphs[0]
     p.text = title
-    p.font.size = Pt(24)
+    p.font.size = Pt(20)
     p.font.bold = True
     p.font.color.rgb = WHITE
     
     # Left column
-    left_header = slide.shapes.add_textbox(Inches(0.5), Inches(1.0), Inches(4.2), Inches(0.4))
+    left_header = slide.shapes.add_textbox(Inches(0.4), Inches(0.75), Inches(4.3), Inches(0.3))
     p = left_header.text_frame.paragraphs[0]
     p.text = left_title
-    p.font.size = Pt(16)
+    p.font.size = Pt(14)
     p.font.bold = True
     p.font.color.rgb = DARK_BLUE
     
-    left_box = slide.shapes.add_textbox(Inches(0.5), Inches(1.4), Inches(4.2), Inches(3.8))
+    left_box = slide.shapes.add_textbox(Inches(0.4), Inches(1.05), Inches(4.3), Inches(4.3))
     tf = left_box.text_frame
     tf.word_wrap = True
     for i, item in enumerate(left_items):
@@ -137,19 +139,19 @@ def add_two_column_slide(title, left_title, left_items, right_title, right_items
         else:
             p = tf.add_paragraph()
         p.text = "• " + item
-        p.font.size = Pt(12)
+        p.font.size = Pt(10)
         p.font.color.rgb = DARK_GRAY
-        p.space_after = Pt(6)
+        p.space_after = Pt(3)
     
     # Right column
-    right_header = slide.shapes.add_textbox(Inches(5.2), Inches(1.0), Inches(4.2), Inches(0.4))
+    right_header = slide.shapes.add_textbox(Inches(5.2), Inches(0.75), Inches(4.3), Inches(0.3))
     p = right_header.text_frame.paragraphs[0]
     p.text = right_title
-    p.font.size = Pt(16)
+    p.font.size = Pt(14)
     p.font.bold = True
     p.font.color.rgb = DARK_BLUE
     
-    right_box = slide.shapes.add_textbox(Inches(5.2), Inches(1.4), Inches(4.2), Inches(3.8))
+    right_box = slide.shapes.add_textbox(Inches(5.2), Inches(1.05), Inches(4.3), Inches(4.3))
     tf = right_box.text_frame
     tf.word_wrap = True
     for i, item in enumerate(right_items):
@@ -158,9 +160,9 @@ def add_two_column_slide(title, left_title, left_items, right_title, right_items
         else:
             p = tf.add_paragraph()
         p.text = "• " + item
-        p.font.size = Pt(12)
+        p.font.size = Pt(10)
         p.font.color.rgb = DARK_GRAY
-        p.space_after = Pt(6)
+        p.space_after = Pt(3)
     
     return slide
 
