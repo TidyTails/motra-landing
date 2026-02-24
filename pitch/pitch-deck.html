@@ -184,10 +184,15 @@
         }
 
         ul li::before {
-            content: '→';
+            content: '';
             position: absolute;
             left: 0;
-            color: #0066ff;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #0066ff;
+            border-radius: 50%;
         }
 
         .highlight-box {
@@ -211,25 +216,49 @@
             align-items: start;
         }
 
-        .icon {
-            font-size: 2rem;
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0066ff20 0%, #0066ff10 100%);
+            border: 1px solid #0066ff30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
         }
 
-        /* Problem icons */
+        .icon-box svg {
+            width: 24px;
+            height: 24px;
+            stroke: #0066ff;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Problem section */
         .pain-point {
             display: flex;
             gap: 1rem;
             padding: 1rem 0;
             border-bottom: 1px solid #1a1a1a;
+            align-items: flex-start;
         }
 
         .pain-point:last-child {
             border-bottom: none;
         }
 
-        .pain-icon {
-            font-size: 1.5rem;
+        .pain-number {
+            width: 28px;
+            height: 28px;
+            background: #0066ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
             flex-shrink: 0;
         }
 
@@ -297,6 +326,20 @@
             font-size: 1rem;
         }
 
+        .alert-box {
+            background: linear-gradient(135deg, #ff6b6b20 0%, #ff6b6b05 100%);
+            border: 1px solid #ff6b6b40;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .alert-box p {
+            color: #ff6b6b;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
         @media (max-width: 768px) {
             .slide { padding: 2rem; }
             h2 { font-size: 2rem; }
@@ -346,19 +389,19 @@
             <div>
                 <h3 style="color: #0066ff; margin-bottom: 1.5rem;">The Pain Points</h3>
                 <div class="pain-point">
-                    <span class="pain-icon">🚗</span>
+                    <span class="pain-number">1</span>
                     <div><strong>No driver = no eyes</strong><br><span style="color:#888">Nobody notices trash, spills, or wear between rides</span></div>
                 </div>
                 <div class="pain-point">
-                    <span class="pain-icon">📍</span>
+                    <span class="pain-number">2</span>
                     <div><strong>Depot-dependent</strong><br><span style="color:#888">Vehicles must return to facilities for basic cleaning</span></div>
                 </div>
                 <div class="pain-point">
-                    <span class="pain-icon">⏱️</span>
+                    <span class="pain-number">3</span>
                     <div><strong>Downtime = lost revenue</strong><br><span style="color:#888">Every minute in depot is a ride not taken</span></div>
                 </div>
                 <div class="pain-point">
-                    <span class="pain-icon">🔧</span>
+                    <span class="pain-number">4</span>
                     <div><strong>Sensors are safety-critical</strong><br><span style="color:#888">Dirty LiDAR/cameras = degraded driving</span></div>
                 </div>
             </div>
@@ -381,24 +424,30 @@
         
         <div class="grid-3">
             <div class="card">
-                <div class="icon">⚡</div>
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
                 <h3>Quick Clean</h3>
                 <p>5-10 min between-ride wipe-down, trash removal, odor neutralization</p>
             </div>
             <div class="card">
-                <div class="icon">✨</div>
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                </div>
                 <h3>Deep Clean</h3>
                 <p>30-60 min full interior detail, sensor cleaning, exterior wash</p>
             </div>
             <div class="card">
-                <div class="icon">🔧</div>
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
                 <h3>Maintenance</h3>
                 <p>Light repairs, tire checks, fluid top-offs, emergency response</p>
             </div>
         </div>
         
         <div class="highlight-box" style="margin-top: 3rem;">
-            <p>✅ Vehicles stay in service zones &nbsp;&nbsp;|&nbsp;&nbsp; ✅ Variable cost model &nbsp;&nbsp;|&nbsp;&nbsp; ✅ Scales instantly &nbsp;&nbsp;|&nbsp;&nbsp; ✅ 24/7 availability</p>
+            <p>Vehicles stay in service zones&nbsp;&nbsp;|&nbsp;&nbsp;Variable cost model&nbsp;&nbsp;|&nbsp;&nbsp;Scales instantly&nbsp;&nbsp;|&nbsp;&nbsp;24/7 availability</p>
         </div>
     </div>
 </section>
@@ -417,11 +466,11 @@
             </tr>
             <tr>
                 <td>Waymo Scale</td>
-                <td><strong>400K rides/week</strong> → targeting <strong>1M/week</strong> by end of 2026</td>
+                <td><strong>400K rides/week</strong> — targeting <strong>1M/week</strong> by end of 2026</td>
             </tr>
             <tr>
                 <td>Fleet Growth</td>
-                <td>2,500 vehicles today → <strong>"tens of thousands"</strong> planned</td>
+                <td>2,500 vehicles today — <strong>"tens of thousands"</strong> planned</td>
             </tr>
             <tr>
                 <td>New Entrants</td>
@@ -433,8 +482,8 @@
             </tr>
         </table>
         
-        <div class="highlight-box">
-            <p>🚨 <strong>The window is NOW</strong> — before AV companies build in-house or a competitor emerges.</p>
+        <div class="alert-box">
+            <p><strong>The window is NOW</strong> — before AV companies build in-house or a competitor emerges.</p>
         </div>
     </div>
 </section>
@@ -484,19 +533,19 @@
             <div>
                 <div class="competitor">
                     <span class="competitor-name">AV In-House Ops</span>
-                    <span class="competitor-gap">❌ High fixed cost, doesn't scale</span>
+                    <span class="competitor-gap">High fixed cost, doesn't scale</span>
                 </div>
                 <div class="competitor">
                     <span class="competitor-name">Traditional Fleet Services</span>
-                    <span class="competitor-gap">❌ Not mobile, not AV-specialized</span>
+                    <span class="competitor-gap">Not mobile, not AV-specialized</span>
                 </div>
                 <div class="competitor">
                     <span class="competitor-name">Car Washes</span>
-                    <span class="competitor-gap">❌ Damages sensors, no interior</span>
+                    <span class="competitor-gap">Damages sensors, no interior</span>
                 </div>
                 <div class="competitor">
                     <span class="competitor-name">Mobile Detailing</span>
-                    <span class="competitor-gap">❌ Not scaled, not fleet-focused</span>
+                    <span class="competitor-gap">Not scaled, not fleet-focused</span>
                 </div>
             </div>
             <div class="card" style="background: linear-gradient(135deg, #0066ff15 0%, #000 100%); border-color: #0066ff40;">
@@ -524,17 +573,17 @@
             <div class="card">
                 <h3>For Fleet Operators</h3>
                 <ul>
-                    <li>📊 Fleet Dashboard — real-time status, scheduling, quality metrics</li>
-                    <li>🔌 API Integration — connects to existing systems</li>
-                    <li>📈 Analytics — predictive maintenance, cost tracking</li>
+                    <li>Fleet Dashboard — real-time status, scheduling, quality metrics</li>
+                    <li>API Integration — connects to existing systems</li>
+                    <li>Analytics — predictive maintenance, cost tracking</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>For MOTRA Techs</h3>
                 <ul>
-                    <li>📱 Mobile App — job dispatch, checklists, earnings</li>
-                    <li>🎓 Certification — AV-specific training program</li>
-                    <li>🧰 Equipment Kits — standardized tools</li>
+                    <li>Mobile App — job dispatch, checklists, earnings</li>
+                    <li>Certification — AV-specific training program</li>
+                    <li>Equipment Kits — standardized tools</li>
                 </ul>
             </div>
         </div>
