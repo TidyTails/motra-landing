@@ -390,6 +390,27 @@ add_content_slide("Customer Segments", [
     "DECISION CRITERIA: Cost per clean, uptime improvement, quality scores, scalability"
 ], "13")
 
+# SLIDE 14: Payment Flow
+add_content_slide("Payment Flow — How Money Moves", [
+    "STEP 1: Fleet Operator (Waymo) pays MOTRA per service",
+    "    - Invoice monthly or per-service via API",
+    "    - Enterprise contracts with volume discounts",
+    "",
+    "STEP 2: MOTRA takes platform cut (25-35%)",
+    "    - Covers: platform, insurance, support, quality assurance",
+    "    - $4-5 per $15 service",
+    "",
+    "STEP 3: MOTRA pays Technician via app",
+    "    - 1099 contractor (not Waymo employee)",
+    "    - $10-11 per service ($15-20/hour effective rate)",
+    "    - Weekly direct deposit or instant pay option",
+    "",
+    "KEY INSIGHT:",
+    "Waymo gets ONE vendor, ONE invoice, ZERO worker management",
+    "MOTRA handles recruiting, training, payroll, insurance, quality",
+    "Technicians get flexible gig work with consistent demand"
+], "14")
+
 # SLIDE 15: Revenue Model
 add_content_slide("Revenue Streams", [
     "PER-SERVICE PRICING:",
@@ -405,12 +426,8 @@ add_content_slide("Revenue Streams", [
     "",
     "AT SCALE:",
     "• 1,000 services/day = $15K revenue, $4-5K margin",
-    "• 10,000 services/day = $150K revenue, $40-50K margin",
-    "",
-    "ENTERPRISE CONTRACTS:",
-    "• Volume discounts for committed minimums",
-    "• SLA guarantees (response time, quality scores)"
-], "14")
+    "• 10,000 services/day = $150K revenue, $40-50K margin"
+], "15")
 
 # SLIDE 16: Key Activities
 add_content_slide("Key Activities", [
@@ -423,13 +440,12 @@ add_content_slide("Key Activities", [
     "• Technician recruitment and onboarding",
     "• AV-specific training and certification",
     "• Quality assurance and performance management",
-    "• Equipment kit distribution",
     "",
     "ENTERPRISE SALES:",
     "• Outreach to AV fleet operators",
     "• Pilot program management",
     "• Account expansion and retention"
-], "15")
+], "16")
 
 # SLIDE 17: Key Resources
 add_content_slide("Key Resources", [
@@ -437,28 +453,24 @@ add_content_slide("Key Resources", [
     "• Dispatch and routing platform",
     "• Fleet operator dashboard",
     "• Technician mobile application",
-    "• API integration layer",
     "",
     "HUMAN:",
     "• Engineering team (platform development)",
     "• Operations team (network management)",
-    "• Sales team (enterprise relationships)",
     "• Trained technician network",
     "",
     "INTELLECTUAL:",
     "• AV-specific training curriculum",
     "• Quality standards and checklists",
-    "• Operational playbooks for each market",
     "",
     "FINANCIAL:",
     "• Seed funding for 18-month runway"
-], "16")
+], "17")
 
 # SLIDE 18: Key Partners
 add_content_slide("Key Partners", [
     "AV ECOSYSTEM:",
     "• Waymo, Cruise, Zoox, Tesla (customers)",
-    "• AV industry associations",
     "• Fleet management software providers",
     "",
     "GIG ECONOMY:",
@@ -469,26 +481,20 @@ add_content_slide("Key Partners", [
     "SUPPORTING:",
     "• Insurance providers (commercial auto, liability)",
     "• Background check services",
-    "• Payment processing (Stripe, etc.)",
-    "",
-    "STRATEGIC:",
-    "• EV charging networks (co-location opportunities)",
-    "• Parking/logistics providers"
-], "17")
+    "• Payment processing (Stripe, etc.)"
+], "18")
 
 # SLIDE 19: Cost Structure
 add_content_slide("Cost Structure", [
     "VARIABLE COSTS (scale with volume):",
     "• Technician payouts: 65-70% of service revenue",
     "• Payment processing: 2-3%",
-    "• Insurance per service",
     "",
     "FIXED COSTS:",
     "• Platform development & maintenance: $15-20K/month",
     "• Core team salaries: $40-60K/month",
     "• Marketing & sales: $10-15K/month",
-    "• Insurance (business): $2-5K/month",
-    "• Legal & compliance: $3-5K/month",
+    "• Insurance & legal: $5-10K/month",
     "",
     "STARTUP COSTS:",
     "• MVP development: $100-150K",
@@ -496,30 +502,27 @@ add_content_slide("Cost Structure", [
     "• Working capital: $100K",
     "",
     "TOTAL SEED NEED: $1.5M for 18-month runway"
-], "18")
+], "19")
 
 # SLIDE 20: Financial Projections
 add_content_slide("Financial Projections", [
     "YEAR 1:",
     "• Markets: 1 (Phoenix or SF)",
     "• Vehicles served: 500",
-    "• Revenue: $1.2M",
-    "• Net: -$300K (investment phase)",
+    "• Revenue: $1.2M | Net: -$300K (investment phase)",
     "",
     "YEAR 2:",
     "• Markets: 3",
     "• Vehicles served: 3,000",
-    "• Revenue: $5.5M",
-    "• Net: +$800K",
+    "• Revenue: $5.5M | Net: +$800K",
     "",
     "YEAR 3:",
     "• Markets: 7",
     "• Vehicles served: 10,000",
-    "• Revenue: $15M",
-    "• Net: +$3.5M",
+    "• Revenue: $15M | Net: +$3.5M",
     "",
     "PATH TO $10M ARR: 36 months"
-], "19")
+], "20")
 
 # SLIDE 21: The Ask
 add_content_slide("The Ask", [
@@ -535,10 +538,9 @@ add_content_slide("The Ask", [
     "• 1 enterprise contract with major AV operator",
     "• 1,000+ services/month",
     "• Positive unit economics proven",
-    "• Expansion to 2nd market",
     "",
     "RUNWAY: 18 months to Series A metrics"
-], "20")
+], "21")
 
 # SLIDE 22: Closing
 add_title_slide("MOTRA", "Autonomy, Maintained\n\nAdonis Williams | Seattle, WA\ntidytails.github.io/motra-landing")
