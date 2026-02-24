@@ -158,6 +158,28 @@ Current solutions are fragmented:
 | Competition from established players | First-mover advantage, specialization |
 | Regulatory hurdles | Partner with AV companies on compliance |
 
+## How AV Companies Handle It Today (Validation)
+
+**Waymo's Current Approach:**
+- **Hand wash only** — Can't use automatic car washes (would destroy sensors)
+- **Depot-based** — Vehicles return to facilities for cleaning/charging
+- **Manual process** — Combination of autonomous parking + manual cleaning
+- **Honor system for messes** — Passengers self-report, pay cleaning fees
+- **Interior cleaning between rides** — Odor mitigation, trash removal
+
+**Pain Points (from Reddit/industry research):**
+- Depot-based = downtime (vehicle not generating revenue while traveling to/from depot)
+- Hand washing at scale = labor intensive
+- No good solution for mid-day cleaning needs
+- Sensor cleaning is critical but specialized
+
+**MOTRA's Advantage:**
+This validates our hypothesis — current solutions are depot-dependent and don't scale.
+Mobile, on-location servicing eliminates:
+- Round-trip depot travel time
+- Fixed facility costs
+- Capacity constraints
+
 ## Why Now?
 
 1. **Waymo just hit 400K rides/week** — scaling fast
