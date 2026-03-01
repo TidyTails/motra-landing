@@ -52,7 +52,7 @@
 ## Current Role
 **Deputy Functional Chief Engineer, Boeing**
 - Seattle, Washington
-- 14 years 8 months at Boeing
+- 15 years at Boeing
 - Partners with Functional Chief Engineer and Business Unit leaders
 
 ## Education
@@ -310,24 +310,13 @@ Adjacent markets: Amazon (30K→100K EVs), FedEx (200K+), UPS (18K+). 250K+ comm
 >
 > **Worker acquisition cost benchmark:** $300-800 per active worker (gig), $5-10K (trucking)"
 
-## Q9: What traction do you have?
-**ANSWER:**
-[NEEDS ADONIS INPUT]
-- Any customer conversations?
-- LOIs or pilot commitments?
-- Waitlist signups?
-
-## Q10: Have you talked to Waymo/Zoox?
-**ANSWER:**
-[NEEDS ADONIS INPUT]
-- Any conversations with fleet ops managers?
-- Any warm intros available via investors?
-
-## Q11: What's your burn rate / runway?
-**ANSWER:**
-[NEEDS ADONIS INPUT]
-- Pre-seed, no burn yet?
-- $1.5M ask / 18-month runway = ~$83K/month burn
+## Q9: What's the burn rate / runway?
+**ANSWER:** ✅ DRAFTED
+> "With $1.5M over 18 months, we're planning approximately $83K/month burn.
+>
+> Roughly $33K on product development, $25K on operations and first techs, $17K on sales and BD, and $8K on G&A.
+>
+> We're running lean until we prove the model."
 
 ## Q12: What milestones does $1.5M unlock?
 **ANSWER:** ✅ DRAFTED
@@ -351,20 +340,7 @@ Adjacent markets: Amazon (30K→100K EVs), FedEx (200K+), UPS (18K+). 250K+ comm
 >
 > **Use of funds:** Product 40% | Operations 30% | Sales 20% | G&A 10%"
 
-## Q13: Why is Adonis doing this part-time? When full-time?
-**ANSWER:**
-[NEEDS ADONIS INPUT]
-- Current commitment level?
-- Full-time trigger (funding? first customer?)
-
-## Q14: Who else is on the team?
-**ANSWER:**
-[NEEDS ADONIS INPUT]
-- Co-founders?
-- Advisors lined up?
-- Key hires planned?
-
-## Q15: What's the exit strategy?
+## Q10: What's the exit strategy?
 **ANSWER:** ✅ DRAFTED
 > "Three realistic paths:
 >

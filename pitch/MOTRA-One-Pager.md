@@ -77,7 +77,7 @@ We deploy mobile technicians directly to vehicles — wherever they are — for 
 ## Team
 
 **Adonis Williams — Founder & CEO**
-- **Deputy Functional Chief Engineer**, Boeing (14 years 8 months)
+- **Deputy Functional Chief Engineer**, Boeing (15 years)
 - **2 Patents** (cybersecurity, blockchain communications)
 - **MS Systems Engineering**, Missouri University of Science and Technology
 - Led distributed teams, USAF pilot test events, production system analytics

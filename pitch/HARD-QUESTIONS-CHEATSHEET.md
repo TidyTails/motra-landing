@@ -103,43 +103,6 @@
 
 ---
 
-### Q: Are you doing this full-time?
-**ANSWER:**
-[ADONIS TO FILL IN]
-- What's your current commitment level?
-- What's the trigger for going full-time? (Funding? First customer?)
-- Timeline for transition?
-
----
-
-### Q: Who else is on the team?
-**ANSWER:**
-[ADONIS TO FILL IN]
-- Any co-founders?
-- Advisors?
-- Key hires planned?
-
----
-
-## TRACTION QUESTIONS
-
-### Q: What traction do you have?
-**ANSWER:**
-[ADONIS TO FILL IN]
-- Any customer conversations?
-- LOIs or pilot commitments?
-- Waitlist signups?
-- If pre-customer, focus on: "We've validated the market through [research/conversations], and our immediate next step is [specific customer approach]."
-
----
-
-### Q: Have you talked to Waymo or Zoox?
-**ANSWER:**
-[ADONIS TO FILL IN]
-- Any conversations with fleet ops managers?
-- Any warm intros available through your network?
-- Boeing connections to mobility industry?
-
 ---
 
 ## FINANCIAL QUESTIONS
