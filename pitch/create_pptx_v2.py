@@ -259,7 +259,7 @@ def content_market(slide):
     # MOTRA TAM
     add_text_box(slide, 0.5, 4.6, 12, 0.4, "MOTRA's Serviceable Market", size=18, color=BLUE, bold=True)
     rows = [
-        ("2028", "$547M", "50K robotaxis × $30/week"),
+        ("2028", "$547M", "100K robotaxis × ~$105/week"),
         ("2030", "$2.2B", "200K robotaxis"),
         ("2032", "$5.5B", "500K robotaxis + commercial EVs")
     ]
@@ -372,7 +372,7 @@ def content_team(slide):
     
     details = [
         ("Current Role", "Deputy Functional Chief Engineer, Boeing"),
-        ("Tenure", "14 years 8 months at Boeing"),
+        ("Tenure", "15 years at Boeing"),
         ("Patents", "2 patents (cybersecurity, blockchain comms)"),
         ("Education", "MS Systems Engineering, Missouri S&T"),
         ("Experience", "Distributed teams, USAF pilot tests, cyber")
@@ -484,7 +484,7 @@ def content_biz_model(slide):
         y += 0.5
     
     # Margin stat
-    add_stat_box(slide, 8, 3.2, "25-35%", "Platform Margin")
+    add_stat_box(slide, 8, 3.2, "27-33%", "Platform Margin")
     add_text_box(slide, 8, 4.6, 4, 0.6, "High operating leverage — platform costs don't scale linearly", size=11, color=GRAY, align=PP_ALIGN.CENTER)
     
     # At scale box
